@@ -1,12 +1,32 @@
-ALGORITHM somme_de_trois_nombre
+ALGORITHM Lecture_d_une_phrase
 VAR
-    num1, num2, num3, somme : ENTIER
+    c: CHAR
+    longueur : i :=0
+    mots : i :=1
+    voyelles : i :=0
+    consonnes : i :=0
+
 BEGIN
-    LIRE(num1)
-    LIRE(num2)
-    LIRE(num3)
-
-    somme <- num1 + num2 + num3
-
-    ECRIRE("La somme des trois nombres est : 52", somme)
+    LIRE consonnes
+    TANT_QUE c <> '.' FAIRE
+        LIRE c
+        longueur <- longueur + 1
+        SI c = ' ' ALORS
+            mots <- mots + 1
+        SINON
+            SI c = 'a' OU c = 'e' OU c = 'i' OU c = 'o' OU c = 'u' OU c = 'y' 
+            OU c = 'A' OU c = 'E' OU c = 'I' OU c = 'O' OU c = 'U' OU c = 'Y' ALORS
+                voyelles <- voyelles + 1
+            SINON
+                SI (c >= 'b' ET c <= 'z') OU (c >= 'B' ET c <= 'Z') ALORS
+                    consonnes <- consonnes + 1
+                FIN_SI
+            FIN_SIN
+        FIN_SI
+    FIN_TANT_QUE
+    ECRIRE "Longueur de la phrase : ", longueur
+    ECRIRE "Nombre de mots : ", mots
+    ECRIRE "Nombre de voyelles : ", voyelles
+    ECRIRE "Nombre de consonnes : ", consonnes
+FIN_ALGORITHM
 END
