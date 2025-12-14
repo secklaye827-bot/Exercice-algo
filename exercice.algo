@@ -1,0 +1,12 @@
+ALGORITHM somme_de_trois_nombre
+VAR
+    num1, num2, num3, somme : ENTIER
+BEGIN
+    LIRE(num1)
+    LIRE(num2)
+    LIRE(num3)
+
+    somme <- num1 + num2 + num3
+
+    ECRIRE("La somme des trois nombres est : 52", somme)
+END
